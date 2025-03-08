@@ -24,12 +24,6 @@ def preprocess_text(text):
     words = [word for word in words if word not in stop_words]  # Remove stopwords
     return " ".join(words)
 
-@app.route("/")
-def home():
-    return {
-        "message": "Flask API on Vercel"
-    }
-
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
